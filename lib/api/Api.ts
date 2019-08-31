@@ -1,11 +1,13 @@
 import qs from 'qs';
 import fetch from 'node-fetch';
 
+import { MediaResult } from './MediaResult';
+import { SearchResponse } from './SearchResponse';
+
 export class Api {
     private apiBaseBath = 'https://www.omdbapi.com/?';
 
     constructor(private key: string) {
-
     }
 
     private validateKey() {
@@ -14,18 +16,17 @@ export class Api {
         }
     }
 
-    search() {
+    async search(title: string): Promise<ReadonlyArray<MediaResult>> {
         this.validateKey();
 
         const params = {
             apiKey: this.key,
-            s: 'test'
+            s: title
         };
         const queryParams = qs.stringify(params);
         const url = this.apiBaseBath + queryParams;
 
-        fetch(url)
-            .then(res => res.json())
-            .then(json => console.log(json));
+        const response: SearchResponse = await fetch(url).then(res => res.json());
+        return response.Search;
     }
 }
