@@ -1,0 +1,21 @@
+{
+    "name": "streamcritic",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run build && node ./dist/index.js",
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "qs": "^6.8.0"
+    },
+    "devDependencies": {
+        "@types/node-fetch": "^2.5.0",
+        "@types/qs": "^6.5.3",
+        "node-fetch": "^2.6.0"
+    }
+}
