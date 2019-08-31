@@ -1,6 +1,6 @@
-import { MediaResult } from "./MediaResult";
+import { MediaResponse } from "./MediaResult";
 
 export interface SearchResponse {
-    Search: ReadonlyArray<MediaResult>;
+    Search: ReadonlyArray<MediaResponse>;
     totalResults: number;
 }
