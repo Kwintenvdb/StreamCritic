@@ -1,8 +1,6 @@
 import qs from 'qs';
-import fetch from 'node-fetch';
 
 import { MediaResponse, ErrorResponse } from './MediaResult';
-import { SearchResponse } from './SearchResponse';
 
 type Response = MediaResponse | ErrorResponse;
 

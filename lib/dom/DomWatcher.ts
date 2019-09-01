@@ -1,4 +1,4 @@
-type WatcherTitleFound = (title: string) => void;
+type WatcherTitleFound = (titleElement: Element, title: string) => void;
 
 export class DomWatcher {
     private observer: MutationObserver;
@@ -14,16 +14,17 @@ export class DomWatcher {
     }
 
     private onMutation(mutations: MutationRecord[]) {
-        const bobCardCreated = mutations.some(m => {
+        const bobCardCreated = mutations.find(m => {
             return m.type === 'childList'
                 && m.addedNodes.length > 0
                 && (m.addedNodes[0] as Element).classList.contains('bob-card');
         });
 
         if (bobCardCreated) {
-            const titleElement = document.querySelector('.bob-title') as Element;
+            const bobCardRoot = bobCardCreated.addedNodes[0] as Element;
+            const titleElement = bobCardRoot.querySelector('.bob-title') as Element;
             const title = titleElement.textContent;
-            this.callback(title);
+            this.callback(titleElement, title);
         }
     }
 }
