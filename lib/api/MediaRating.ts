@@ -1,4 +1,4 @@
 export interface MediaRating {
-    Source: string;
+    Source: 'Internet Movie Database' | 'Rotten Tomatoes' | 'Metacritic';
     Value: string;
 }
