@@ -18,19 +18,19 @@ export class Api {
         }
     }
 
-    async search(title: string): Promise<ReadonlyArray<MediaResponse>> {
-        this.validateKey();
+    // async search(title: string): Promise<ReadonlyArray<MediaResponse>> {
+    //     this.validateKey();
 
-        const params = {
-            apiKey: this.key,
-            s: title
-        };
-        const queryParams = qs.stringify(params);
-        const url = this.apiBaseBath + queryParams;
+    //     const params = {
+    //         apiKey: this.key,
+    //         s: title
+    //     };
+    //     const queryParams = qs.stringify(params);
+    //     const url = this.apiBaseBath + queryParams;
 
-        const response: SearchResponse = await fetch(url).then(res => res.json());
-        return response.Search;
-    }
+    //     const response: SearchResponse = await fetch(url).then(res => res.json());
+    //     return response.Search;
+    // }
 
     private isErrorResponse(response: Response): response is ErrorResponse {
         return response.Response === 'False';
