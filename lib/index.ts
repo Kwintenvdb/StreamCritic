@@ -1,12 +1,11 @@
-import { Api } from './api/Api';
 import apiConfig from './apiConfig.json';
+import { Api } from './api/Api';
+import { DomWatcher } from './dom/DomWatcher';
 
 const key = apiConfig.key;
-// const key = 'key';
 const api = new Api(key);
-// api.search('Nightcrawler')
-//     .then(results => {
-//         console.log(results);
-//     });
 
-api.findByTitle('Nightcrawler');
+const rootNode = document.querySelector('.mainView');
+const watcher = new DomWatcher(rootNode, foundTitle => {
+    api.findByTitle(foundTitle);
+});
