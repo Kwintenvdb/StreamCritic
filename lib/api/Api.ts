@@ -16,20 +16,6 @@ export class Api {
         }
     }
 
-    // async search(title: string): Promise<ReadonlyArray<MediaResponse>> {
-    //     this.validateKey();
-
-    //     const params = {
-    //         apiKey: this.key,
-    //         s: title
-    //     };
-    //     const queryParams = qs.stringify(params);
-    //     const url = this.apiBaseBath + queryParams;
-
-    //     const response: SearchResponse = await fetch(url).then(res => res.json());
-    //     return response.Search;
-    // }
-
     private isErrorResponse(response: Response): response is ErrorResponse {
         return response.Response === 'False';
     }
@@ -47,7 +33,6 @@ export class Api {
         if (this.isErrorResponse(response)) {
             throw new Error(`Could not find matching media with title ${title}.`);
         } else {
-            console.log(response);
             return response;
         }
     }
