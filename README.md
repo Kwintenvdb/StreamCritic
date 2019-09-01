@@ -22,3 +22,7 @@ Load as an unpacked extension in Chrome during development.
 Once the extension has been added to Chrome, simply hover over any media preview on Netflix. The IMDb rating for movie or television show will be displayed under its title.
 
 ![example](example.png?raw=true)
+
+## Credits
+
+Credit to Brian Fritz for creating [OMDb API](http://www.omdbapi.com/).
