@@ -7,13 +7,15 @@ To be extended later to support more streaming services.
 
 **Note:** requires an API key from [OMDb API](http://www.omdbapi.com/). Get a personal API key and place it in a JSON file under the `lib` folder. The file needs a single property named `key`.
 
-Install Typescript and Webpack
+Install Typescript and Webpack:
 
 `npm i --g typescript webpack webpack-cli`
 
-Run the build script
+Run the build script:
 
 `npm run build`
+
+The build script will produce a single bundjed JS file and `manifest.json` which can be loaded as a Chrome extension.
 
 Load as an unpacked extension in Chrome during development.
 
