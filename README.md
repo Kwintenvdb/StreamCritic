@@ -1,5 +1,7 @@
 # StreamCritic
-Chrome extension that adds IMDb ratings to Netflix
+Chrome extension that adds IMDb ratings to Netflix.
+
+To be extended later to support more streaming services.
 
 ## How to build
 
